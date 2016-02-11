@@ -15,6 +15,9 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
@@ -43,5 +46,39 @@
             </ComboBox>
             <TextBlock x:Name="MyResult" VerticalAlignment="Center" Text="Result" Margin="20,0,0,0"></TextBlock>
         </StackPanel>
+
+        <TextBlock Text="ListBox: " Grid.Row="4" VerticalAlignment="Center" />
+        <StackPanel Grid.Row="4" Grid.Column="1" Margin="20,10,0,10" Orientation="Horizontal">
+            <ListBox x:Name="MyListBox" SelectionMode="Multiple" SelectionChanged="MyListBox_SelectionChanged">
+                <ListBoxItem Content="First" />
+                <ListBoxItem Content="Second" />
+                <ListBoxItem Content="Third" />
+            </ListBox>
+            <TextBlock x:Name="ListBoxResult" VerticalAlignment="Center" Margin="20,0,0,0"/>
+        </StackPanel>
+
+        <TextBlock Text="Image: " Grid.Row="5" VerticalAlignment="Center" />
+        <Image Source="Assets/MyLogo.fw.png" HorizontalAlignment="Left" Width="100" Height="50"
+               Grid.Row="5" Grid.Column="1" Stretch="Uniform" Margin="20,10,0,10" />
+
+        <TextBlock Text="ToggleButton" VerticalAlignment="Center" Grid.Row="6" />
+        <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="1" Margin="20,10,0,10">
+            <ToggleButton x:Name="MyToggleButton" Content="Prenium Option" IsThreeState="True" Click="MyToggleButton_Click" />
+            <TextBlock x:Name="ToggleButtonResult" Margin="20,0,0,0" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <TextBlock Text="ToggleSwitch" Grid.Row="7" VerticalAlignment="Center" />
+        <StackPanel Orientation="Horizontal" Grid.Row="7" Grid.Column="1" Margin="20,10,0,10">
+            <ToggleSwitch>
+                <ToggleSwitch.OffContent>
+                    <TextBlock Text="I'm off right now" VerticalAlignment="Center" />
+                </ToggleSwitch.OffContent>
+                <ToggleSwitch.OnContent>
+                    <TextBlock Text="I'm on!" VerticalAlignment="Center" />
+                </ToggleSwitch.OnContent>
+            </ToggleSwitch>
+        </StackPanel>
+
+
     </Grid>
 </Page>

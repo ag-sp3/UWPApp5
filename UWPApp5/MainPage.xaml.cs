@@ -51,5 +51,17 @@ namespace UWPApp5
             MyResult.Text = item;
             
         }
+
+        private void MyListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedItems = MyListBox.Items.Cast<ListBoxItem>().Where(p => p.IsSelected).Select(t => t.Content.ToString()).ToArray();
+
+            ListBoxResult.Text = String.Join(", ", selectedItems);
+        }
+
+        private void MyToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            ToggleButtonResult.Text = MyToggleButton.IsChecked.ToString();
+        }
     }
 }
