@@ -26,5 +26,30 @@ namespace UWPApp5
         {
             this.InitializeComponent();
         }
+
+        private void MyCheckBox_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            CheckBoxResult.Text = MyCheckBox.IsChecked.ToString();
+        }
+
+        private void YesRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButtonResult.Text = (bool)YesRadioButton.IsChecked ? "Yes" : "No";
+        }
+
+        private void NoRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButtonResult.Text = (bool)NoRadioButton.IsChecked ? "No" : "Yes";
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (MyResult == null) return;
+
+            var item = (MyComboBox.SelectedItem as ComboBoxItem).Content.ToString();
+
+            MyResult.Text = item;
+            
+        }
     }
 }

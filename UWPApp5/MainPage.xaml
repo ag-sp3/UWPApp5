@@ -7,7 +7,41 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+          Margin="10,10,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
+        <TextBlock Grid.Row="1" Text="CheckBox: " VerticalAlignment="Center" />
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="20,10,0,10" Orientation="Horizontal">
+            <CheckBox x:Name="MyCheckBox" Content="Agree?" Tapped="MyCheckBox_Tapped" />
+            <TextBlock x:Name="CheckBoxResult" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <TextBlock Text="RadioButton: " Grid.Row="2" VerticalAlignment="Center" />
+        <StackPanel Grid.Row="2" Grid.Column="1" Margin="20,10,0,10" Orientation="Horizontal">
+            <RadioButton x:Name="YesRadioButton" Content="Yes" GroupName="MyRadioButtons" Checked="YesRadioButton_Checked" />
+            <RadioButton x:Name="NoRadioButton" Content="No" GroupName="MyRadioButtons" Checked="NoRadioButton_Checked" />
+            <TextBlock x:Name="RadioButtonResult" VerticalAlignment="Center" />
+        </StackPanel>
+
+        <TextBlock Text="ComboBox: " Grid.Row="3" VerticalAlignment="Center" />
+        <StackPanel Grid.Row="3" Grid.Column="1" Margin="20,10,0,10" Orientation="Horizontal">
+            <ComboBox x:Name="MyComboBox" SelectionChanged="ComboBox_SelectionChanged" >
+                <ComboBoxItem Content="Fourth" IsSelected="True" />
+                <ComboBoxItem Content="Fifth" />
+                <ComboBoxItem Content="Sixth" />
+            </ComboBox>
+            <TextBlock x:Name="MyResult" VerticalAlignment="Center" Text="Result" Margin="20,0,0,0"></TextBlock>
+        </StackPanel>
     </Grid>
 </Page>
